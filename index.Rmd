@@ -19,7 +19,7 @@ output:
       navigation:
         scroll: false # disable slide transitions by scrollin
 bibliography:
-- https://github.com//valentinaandrade/class-identity-chile/raw/main/input/bib/paper-bibliography.bib"
+- https://github.com//valentinaandrade/class-identity-chile/raw/main/input/bib/paper-bibliography.bib
 - https://github.com//valentinaandrade/class-identity-chile/raw/main/input/bib/packages.bib
 biblio-style: apalike
 lang: es-CL
@@ -257,11 +257,11 @@ issp  %>%
 
 ## Posición de clase 
 
-- La posición de clase fue medida a partir de una versión modificada de diez categorías del esquema de clases propuesto por @wright1997. 
+- La posición de clase fue medida a partir de una versión modificada de diez categorías del esquema de clases propuesto por Wright (1997). 
 
-- Siguiendo investigaciones recientes [@elbert2018] y estudios tradicionales sobre mercado del trabajo Latinoamericano [@tokman2000; @prealc1978], construimos una nueva categoría para identificar a los **autoempleados semi-calificados o no calificados**.
+- Siguiendo investigaciones recientes (Elbert y Pérez, 2018) y estudios tradicionales sobre mercado del trabajo Latinoamericano (Tokman, 2000), construimos una nueva categoría para identificar a los **autoempleados semi-calificados o no calificados**.
 
-
+<small><small>
 ```{r table2, echo=F}
 issp$class2 <- car::recode(issp$class, recodes = c('"1.Capitalists"="1.Empresarios";"2.Small employers"="2.Pequeños empleadores";"3.Petite bourgeoisie"="3.Pequeña burguesía formal";"4.Expert managers"="4.Expertos Directivos"; "5.Nonmanagerial experts"="5.Expertos sin autoridad"; "6.Skilled supervisors"="6.Supervisores calificados";"7.Unskilled supervisors"="7.Supervisoresno calificados";"8.Skilled workers"="8.Trabajadores calificados"; "9.Unskilled workers"="9.Trabajadores no calificados"; "10. Informal self-employed"="10.Autoempleados informales"'), as.factor=T,levels  = c("1.Empresarios", "2.Pequeños empleadores", "3.Pequeña burguesía formal", "4.Expertos Directivos", "5.Expertos sin autoridad", "6.Supervisores calificados", "7.Supervisoresno calificados", "8.Trabajadores calificados","9.Trabajadores no calificados", "10.Autoempleados informales"))
 z <- data.frame(variables = "Total", valor = "(observaciones)", p_1999 = "2.808", p_2009 = "2.808", p_2019 = "2.808") #Total
@@ -277,14 +277,14 @@ issp  %>% select(year,class2, union, FACTOR) %>%
   select(1,2,starts_with("p")) %>% bind_rows(z) %>%
   knitr::kable(digits = 3, row.names = F,  booktabs = T,
              col.names = c("Variable independiente", "Respuesta", "1999", "2009", "2019"),
-             caption = "<b>Tabla 2</b>: Predictores principales") %>%
+             caption = "<b>2</b>: Predictores principales") %>%
             add_header_above(c(" " = 2, "Año" = 3)) %>% 
             kableExtra::kable_styling(latex_options = "hold_position") %>% collapse_rows(columns = 1:2) %>% 
             kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
             kableExtra::column_spec(1, width = "9cm") %>%
   kableExtra::footnote(general = "", general_title = "Fuente: Elaboración propia en base a ISSP 1999, 2009, y 2019. Datos ponderados", footnote_as_chunk = F)
 ```
-
+<small><small>
 ---
 
 ## Sindicalización  y año aplicación encuesta
@@ -305,7 +305,7 @@ issp  %>% select(year,typewrk, sex, region, FACTOR) %>%
   select(1,2,starts_with("p")) %>% bind_rows(z) %>% 
   knitr::kable(digits = 3, row.names = F,  booktabs = T,
              col.names = c("Variable independiente", "Respuesta", "1999", "2009", "2019"),
-             caption = "<b>Tabla 3</b>: Controles sociodemográficos") %>%
+             caption = "<b>3</b>: Controles sociodemográficos") %>%
             add_header_above(c(" " = 2, "Año" = 3)) %>% 
             kableExtra::kable_styling(latex_options = "hold_position") %>% collapse_rows(columns = 1:2) %>% 
             kableExtra::kable_styling(bootstrap_options = "striped", full_width = F)%>%
@@ -314,7 +314,6 @@ issp  %>% select(year,typewrk, sex, region, FACTOR) %>%
 ```
 
 ---
-
 class: fdl-black center middle
 background-image: url("assets/logo/logo-blanco.png")
 background-size: 15%
@@ -350,7 +349,7 @@ m03 <- glm(identity_r~ class  + union + year + typewrk + sex + age + region + ye
 ---
 
 **Tabla 4.** Determinantes de la identidad de clase trabajadora en Chile, 1999 – 2019
-
+<small><small><small><small><small><small>
 ```{r tabmodel0, echo = FALSE, results = "asis"}
 # 5. Presentacion
 labs01 <- c("Intercepto", "1. Empresarios", "2.Pequeños empleadores", "3.Pequeña burguesía formal", "4.Expertos Directivos", "5.Expertos sin autoridad", "6.Supervisores calificados", "7.Supervisores no calificados", "8.Trabajadores calificados", "10.Autoempleados informales", "Sindicalizado", "2009", "2019", "Empleado sector privado (ref: Público)", "Mujer (ref:Hombre)", "Edad (en años)", "Region No RM (ref: Metropolitana)", "1. Empresarios- 2009", "2.Pequeños empleadores-2009", "3.Pequeña burguesía formal-2009", "4.Expertos managers-2009", "5.Expertos sin autoridad-2009", "6.Supervisores calificados-2009", "7.Supervisores no calificados-2009", "8.Trabajadores calificados-2009", "10.Autoempleados informales-2009", "1. Empresarios- 2019", "2.Pequeños empleadores-2019", "3.Pequeña burguesía formal-2019", "4.Expertos managers-2019", "5.Expertos sin autoridad-2019", "6.Supervisores calificados-2019", "7.Supervisores no calificados-2019", "8.Trabajadores calificados-2019", "10.Autoempleados informales-2019", "Sindicalización-2009", "Sindicalización-2019")
@@ -370,66 +369,66 @@ htmlreg(l = list(m01,m02,m03),
         custom.gof.rows = list("Pseudo R$^{2}$" = c("00.946","0.1066","00.953")), 
         custom.note = "$^{***}$ p < 0.001; $^{**}$ p < 0.01; $^{*}$ p < 0.05 <br> Errores estándar entre paréntesis \n**Nota**: Para identidad de clases se utilizó una recodificación restrictiva, esto es, considerando solo de 'clase trabajadora' a quienes indicador ser de 'Clase Trabajadora' y 'Clase baja'")
 ```
+<small>
+<small>
+<small>
+<small><small><small>
+---
+background-image: url("assets/logo/logo.png")
+background-size: 15%
+background-position: 100% 0%
 
+<img src="https://github.com/valentinaandrade/class-identity-chile/raw/main/output/images/figure3B.png" width="90%"/>
+
+**Figura 3**: Probabilidad de identificación con la clase trabajadora para cada clase social, situación de sindicalización y año. *Fuente*: ISSP (1999, 2009-2019). Datos ponderados
+
+---
+background-image: url("assets/logo/logo.png")
+background-size: 15%
+background-position: 100% 0%
+
+<img src="https://github.com/valentinaandrade/class-identity-chile/raw/main/output/images/figure4B.png" width="90%"/>
+
+**Figura 4**: Probabilidad de identificación con la clase trabajadora según clase y año.*Fuente*: ISSP (1999, 2009-2019). Datos ponderados
+
+---
+background-image: url("assets/logo/logo.png")
+background-size: 15%
+background-position: 100% 0%
+
+<img src="https://github.com/valentinaandrade/class-identity-chile/raw/main/output/images/figure5B.png" width="90%"/>
+
+**Figura 5**: Probabilidad de identificación con la clase trabajadora según sindicalización y año. *Fuente*: ISSP (1999, 2009-2019). Datos ponderados
 
 ---
 
-```{r fig3, echo = F, fig.cap="**Figura 3**: Probabilidad de identificación con la clase trabajadora para cada clase social, situación de sindicalización y año. *Fuente*: ISSP (1999, 2009-2019). Datos ponderados", dpi=300, fig.width = 8, fig.height = 6}
-# Probabilidades predichas para identidad de clase según clase social
-fig2class <-  plot_model(m01,type = "pred",
-           terms = "class [1.Capitalists, 2.Small employers,3.Petite bourgeoisie,4.Expert managers, 5.Nonmanagerial experts, 6.Skilled supervisors, 7.Unskilled supervisors, 8.Skilled workers, 9.Unskilled workers, 10. Informal self-employed]",
-           title = "Social class", axis.title = "") +
-  scale_x_discrete(name = "",limits = c("1.Capitalists", "2.Small employers","3.Petite bourgeoisie","4.Expert managers", "5.Nonmanagerial experts", "6.Skilled supervisors", "7.Unskilled supervisors", "8.Skilled workers", "9.Unskilled workers", "10. Informal self-employed"), labels = c("1.Capitalists", "2.Small\nemployers", "3.Petite\nbourgeoisie", "4.Expert\nsupervisors", "5.Nonmanagerial\nexperts", "6.Skilled\nsupervisors", "7.Unskilled\nsupervisors", "8.Skilled\nworkers","9.Unskilled\nworkers", "10.Informal\nself-employed")) + scale_y_continuous(limits = c(0.1,0.8), labels = scales::percent_format()) +
-  geom_line() +
-  theme(axis.text.x = element_text(size = 6))
-                                   #vjust = 0.5, hjust=-0.1))
-# Probabilidades predichas para identidad de clase según sindicalización
-fig2union <- plot_model(m01,type = "pred",
-           terms = c("union"), 
-           title = "Unionization", axis.title = "") + scale_x_discrete(name = "",limits =c("No", "Si"),labels = c("No union member", "Union member"))  + scale_y_continuous(limits = c(0.1,0.8), labels = scales::percent_format()) + 
-  geom_line()
-#Probabilidades predichas para identidad de clase según año
-fig2year <- plot_model(m01,type = "pred",
-           terms = c("year"), 
-           title = "Year", axis.title = "") +
-  scale_x_discrete(name = "",limits = c("1999-01-01", "2009-01-01", "2019-01-01"),labels = c("1999", "2009", "2019")) + 
-  geom_line() + scale_y_continuous(limits = c(0.1,0.8),
-                                    labels = scales::percent_format())
-layout <- rbind(c(1, 1),
-                c(2, 3))
-gridExtra::grid.arrange(fig2class, fig2union, fig2year, layout_matrix=layout)
-```
+class: fdl-black center middle
+background-image: url("assets/logo/logo-blanco.png")
+background-size: 15%
+background-position: 100% 0%
 
+.white[
+
+# Conclusiones
+]
+
+
+.footnote.white[
+FONDECYT N°11190229 **Determinantes institucionales y políticos del conflicto entre empresarios y trabajadores: los casos de Argentina y Chile en perspectiva comparada**]
 ---
+background-image: url("assets/logo/logo.png")
+background-size: 15%
+background-position: 100% 0%
 
-```{r fig4, echo = F, fig.cap="**Figura 4**: Probabilidad de identificación con la clase trabajadora según clase y año.*Fuente*: ISSP (1999, 2009-2019). Datos ponderados", dpi=300, fig.width = 8, fig.height = 6}
-dat <- ggpredict(m02, terms = c("class", "year"))
-#plot(dat, colors = "bw", ci = T, connect.lines = TRUE)   + labs(title = "", x= "", y ="Identidad de clase (ref:9. Trabajadores no calificados)", fill = "")
-ggplot(dat, aes(x, predicted, shape = group, color =group)) +
-  geom_point(size = 3,position = position_dodge(.1))+
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high),
-    position = position_dodge(.1))  + 
-  scale_shape_discrete(name = "",limits = c("1999-01-01", "2009-01-01", "2019-01-01"),labels = c("1999", "2009", "2019")) +
-  scale_x_discrete(name = "",limits = c("1.Capitalists", "2.Small employers","3.Petite bourgeoisie","4.Expert managers", "5.Nonmanagerial experts", "6.Skilled supervisors", "7.Unskilled supervisors", "8.Skilled workers", "9.Unskilled workers", "10. Informal self-employed"), labels = c("1.Capitalists", "2.Small employers","3.Petite bourgeoisie","4.Expert managers", "5.Nonmanagerial experts", "6.Skilled supervisors", "7.Unskilled supervisors", "8.Skilled workers", "9.Unskilled workers", "10. Informal self-employed")) +  scale_color_grey(name = "",limits = c("1999-01-01", "2009-01-01", "2019-01-01"),labels = c("1999", "2009", "2019")) +
-  labs(y = "") +
-  theme(axis.text.x = element_text(angle = -90,vjust = 0.5, hjust=1)) 
-```
+# Conclusiones
 
----
+<br>
 
-```{r fig5, echo = F, fig.cap="**Figura 5**: Probabilidad de identificación con la clase trabajadora según sindicalización y año. *Fuente*: ISSP (1999, 2009-2019). Datos ponderados", dpi=300, fig.width = 8, fig.height = 6}
-dat <- ggpredict(m03, terms = c("union", "year"))
-ggplot(dat, aes(x, predicted, shape = group, color =group)) +
-  geom_point(size = 3,position = position_dodge(.1))+
-  geom_errorbar(aes(ymin = conf.low, ymax = conf.high),
-    position = position_dodge(.1))  + 
-  scale_shape_discrete(name = "",limits = c("1999-01-01", "2009-01-01", "2019-01-01"),labels = c("1999", "2009", "2019")) + scale_x_discrete(name = "",limits =c("No", "Si"),labels = c("No union member", "Union member")) +  scale_color_grey(name = "",limits = c("1999-01-01", "2009-01-01", "2019-01-01"),labels = c("1999", "2009", "2019"))+ labs(y = "")
-```
+.content-box-gray[- Quienes pertenecen a la clase trabajadora tienen mayores probabilidades de identificarse con dicha clase.]
 
+--
 
----
-
-Nuestros hallazgos sugieren que quienes pertenecen a la clase trabajadora tienen mayores probabilidades de identificarse con dicha clase. Sin embargo, contrario nuestras hipótesis, los análisis no indican que la identidad de clase trabajadora se refuerce como resultado de la afiliación sindical, ni que ella haya aumentado significativamente en la última década. 
+.content-box-gray[- Sin embargo, *contrario nuestras hipótesis*, los análisis no indican que la identidad de clase trabajadora se refuerce como resultado de la afiliación sindical, ni que ella haya aumentado significativamente en la última década.]
 
 
 ---
