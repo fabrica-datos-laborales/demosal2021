@@ -461,6 +461,7 @@ background-position: 100% 0%
 .pull-right[.pull-down[
 
 .white[**Valentina Andrade** - Asistente de investigación]
+
 <a href="mailto:valentinaandrade@uchile.cl">
 .white[`r icons::icon_style(icons::fontawesome("paper-plane"), fill = "white")` valentinaandrade@uchile.cl]
 </a>
