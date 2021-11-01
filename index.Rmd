@@ -219,7 +219,6 @@ background-position: 100% 0%
 $$p(identity) = \beta_o + \beta_1\cdot class + \beta_3 \cdot unionization + \beta \cdot year + \beta_4 \cdot unionization\cdot class$$
 ]
 
-- [Descargar resultados del modelo](https://github.com/valentinaandrade/class-identity-chile/raw/main/output/modelo.png)
 
 ---
 
@@ -486,6 +485,12 @@ Sin embargo, *contrario nuestras hipótesis*, los análisis no indican que la id
 ¿Qué explicación podemos dar a esto?
 ]
 
+.content-box-red.small[
+1. Sindicalización aún restringida (grandes empresas, contratos permanentes, etc.)
+
+2. Identidad de clase trabajadora fuerte incluso en 2009 .tiny[(e.g., Elbert y Pérez, 2018)]
+
+3. Datos de 2019 obtenidos *antes* de octubre de ese año]
 
 ---
 class: fdl-black
